@@ -1,0 +1,6 @@
+{
+  "name": "Notif Monitor",
+  "description": "Real-time SMS and active system notification monitor with live logs, permission manager, and test tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
