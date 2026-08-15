@@ -2,7 +2,7 @@ workflows:
   android-debug-apk:
     name: Build Android Debug APK
     max_build_duration: 60
-    instance_type: linux_x2
+    instance_type: mac_mini_m2
     environment:
       java: 17
     scripts:
@@ -21,7 +21,7 @@ workflows:
             fi
           fi
           # Accept Android SDK Licenses
-          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          yes | sdkmanager --licenses 2>/dev/null || yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
       - name: Build Debug APK
         script: |
           chmod +x gradlew
